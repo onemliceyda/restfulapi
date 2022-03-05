@@ -16,23 +16,23 @@ POST {{BASE_URL}}/users
 Content-Type: application/json
 
 {
-    "isim":"Ceyda Önemli",
-    "email":"ceydaonemli2@gmail.com",
-    "userName":"ceydaonemli",
-    "password":"1",
+    "isim":"ceydosko önemli",
+    "email":"ceydosko@gmail.com",
+    "userName":"ceydoskko",
+    "password":"12554"
 }
 
 ###
 
-PATCH  {{BASE_URL}}/users/5454
+PATCH  {{BASE_URL}}/users/622350b7a1551c09fa5178b3
 Content-Type: application/json
 
 {
-    "isim":"Ceyda Önemli2",
-    "yaş":23,
-    "userName":"ceydaonemli2"
+    "isim":"Ceyda Önemliiii",
+    "userName":"ceydaonemlii"
 }
+
 ###
-DELETE   {{BASE_URL}}/users/5454
+DELETE   {{BASE_URL}}/users/62234d8990771ced02eea58
 Content-Type: application/json
  
