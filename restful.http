@@ -17,8 +17,9 @@ Content-Type: application/json
 
 {
     "isim":"Ceyda Önemli",
-    "yaş":22,
-    "userName":"ceydaonemli"
+    "email":"ceydaonemli2@gmail.com",
+    "userName":"ceydaonemli",
+    "password":"1",
 }
 
 ###

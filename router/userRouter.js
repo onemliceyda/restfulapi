@@ -1,9 +1,10 @@
-const { json } = require('express/lib/response');
 
+const User=require('../models/userModel')
 const router=require('express').Router(); ;
 
 router.get('/',(req,res)=>{
-    res.json({mesaj:"Tüm userlar listelenecek"})
+    const tumUserlar= User.find({}).then();
+    res.json(tumUserlar)
 })
 
 
@@ -22,7 +23,7 @@ router.post('/',(req,res)=>{
 //güncelleme işlemleri için
 router.patch('/:id',(req,res)=>{
     res.json({
-        mesaj:"idsi"+req.params.id+" olan kullanıcının bilgileri "+JSON.stringify(req.body)+" bilgileriyle güncellenecek"
+        mesaj:"idsi"+req.params.id+" olan kullanıcının bilgileri "+(req.body)+" bilgileriyle güncellenecek"
     })
 })
 
