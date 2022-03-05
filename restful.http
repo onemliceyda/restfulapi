@@ -1,0 +1,24 @@
+
+@BASE_URL=http://localhost:3001/
+
+GET {{BASE_URL}}
+
+###
+
+GET {{BASE_URL}}99?sortBy=name
+
+###
+POST {{BASE_URL}}
+Content-Type: application/json
+
+{
+    "isim":"ceyda",
+    "yaş":"22"  
+}
+
+
+###
+POST {{BASE_URL}}
+Content-Type: application/x-www-form-urlencoded
+
+isim=ceydosko&yas=22

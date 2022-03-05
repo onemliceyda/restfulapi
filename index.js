@@ -1,10 +1,29 @@
 const express = require('express');
-const mongoose = require('mongoose');
-
+require('./db/dbConnection');
 const app = express();
-mongoose.connect('mongodb://localhost/restfulapi', { useUnifiedTopology: true, useNewUrlParser: true })
-    .then(() => console.log("Veritabanına bağlandı"))
-    .catch(hata => console.log("db hatası"))
-app.listen(8080, () => {
+
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+
+
+
+app.get('/', (req, res) => {
+    res.json({
+        'mesaj': 'hoşgeldiniz'
+    });
+})
+
+app.get('/:id', (req, res) => {
+    console.log(req.query.sortBy);
+    res.status(200).json({'id':req.params.id})});
+
+
+app.post('/', (req, res) => {
+    res.json(req.body);
+})
+ 
+
+app.listen(3001, () => {
     console.log("3001 portundan server ayaklandırıldı")
 });
