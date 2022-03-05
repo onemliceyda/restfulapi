@@ -1,24 +1,37 @@
 
-@BASE_URL=http://localhost:3001/
+@BASE_URL=http://localhost:3001/api
 
 GET {{BASE_URL}}
 
 ###
 
-GET {{BASE_URL}}99?sortBy=name
+GET {{BASE_URL}}/users
 
 ###
-POST {{BASE_URL}}
+
+GET {{BASE_URL}}/users/12345
+###
+
+POST {{BASE_URL}}/users
 Content-Type: application/json
 
 {
-    "isim":"ceyda",
-    "yaş":"22"  
+    "isim":"Ceyda Önemli",
+    "yaş":22,
+    "userName":"ceydaonemli"
 }
 
-
 ###
-POST {{BASE_URL}}
-Content-Type: application/x-www-form-urlencoded
 
-isim=ceydosko&yas=22
+PATCH  {{BASE_URL}}/users/5454
+Content-Type: application/json
+
+{
+    "isim":"Ceyda Önemli2",
+    "yaş":23,
+    "userName":"ceydaonemli2"
+}
+###
+DELETE   {{BASE_URL}}/users/5454
+Content-Type: application/json
+ 
