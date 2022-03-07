@@ -10,21 +10,32 @@ router.get('/', async (req, res) => {
 
 
 
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res,) => {
     res.json({ mesaj: "id'si : " + req.params.id + " olan user listelenecek" })
 })
 
 
 
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
 
     try {
         const eklenecekUser = new User(req.body);
-        const sonuc = await eklenecekUser.save();
-        res.json(sonuc);
+
+        const { error, sonuc } = eklenecekUser.joiValidation(req.body);
+
+        if (error) {
+            next(error);
+            console.log("user kaydedilirken oluşan hata : " + err);
+        } else {
+            const sonuc = await eklenecekUser.save();
+            res.json(sonuc);
+        }
+
+
     } catch (err) {
-        console.log("kaydederken oluşan hata : " + err)
+        next(err);
+
     }
 })
 

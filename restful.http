@@ -16,10 +16,10 @@ POST {{BASE_URL}}/users
 Content-Type: application/json
 
 {
-    "isim":"ceydosko önemli",
-    "email":"ceydos@gmail.com",
-    "userName":"ceydoskko",
-    "password":"12554"
+    "isim":"ceydosko önemlii",
+    "email":"ceydos1s@gmail.com",
+    "userName":"ceydaonemli",
+    "password":"1254545"
 }
 
 ###
