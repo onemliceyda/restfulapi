@@ -17,22 +17,22 @@ Content-Type: application/json
 
 {
     "isim":"ceydosko önemli",
-    "email":"ceydosko@gmail.com",
+    "email":"ceydos@gmail.com",
     "userName":"ceydoskko",
     "password":"12554"
 }
 
 ###
 
-PATCH  {{BASE_URL}}/users/622350b7a1551c09fa5178b3
+PATCH  {{BASE_URL}}/users/6225e728aa3901e3195597b7
 Content-Type: application/json
 
 {
-    "isim":"Ceyda Önemliiii",
-    "userName":"ceydaonemlii"
+    "password":"55656",
+    "isim":"ceyceycey"
 }
 
 ###
-DELETE   {{BASE_URL}}/users/62234d8990771ced02eea58
+DELETE   {{BASE_URL}}/users/62234ae705fe6336be000980
 Content-Type: application/json
  

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/onemliceyda/restfulapi#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "http-errors": "^2.0.0",
     "mongoose": "^6.2.4"
   }
 }
