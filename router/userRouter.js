@@ -42,19 +42,20 @@ router.patch('/:id',async(req,res)=>{
     }
 });
 
-router.delete('/:id',async(req,res)=>{
+router.delete('/:id',async(req,res,next)=>{
     try {
         const silinecekUser=await User.findByIdAndDelete({_id:req.params.id})
         
         if(silinecekUser){
             return res.json({mesaj:"Kullanıcı silindi"})
         }else{
+            //throw new Error('Kullanıcı Bulunamadi) 
             return res.status(404).json({
                 mesaj:"Kullanıcı bulunamadı",
             })
         }
-    } catch (err) {
-        console.log("db de oluşan hata : "+err);
+    } catch (e) {
+        next(e); //middleware kullanımı
     }
 
 })
